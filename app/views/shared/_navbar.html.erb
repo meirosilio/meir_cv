@@ -2,75 +2,40 @@
 <!-- Sidebar Holder -->
 <nav id="sidebar">
 
-  <div class="sidebar-header mt-5">
-    <h2>Meir Rosilio</h2>
-    <%= image_tag("profile_image.jpg", class: "img-circular") %>
-  </div>
+  <% @users.each do |user| %>
+      <div class="sidebar-header mt-5">
+        <h2><%=user.first_name%> <%= user.last_name%></h2>
+        <%= image_tag("profile_image.jpg", class: "img-circular") %>
+      </div>
 
-  <hr>
+      <hr>
 
 
-  <legend>-PROFILE-</legend>
-  <div class="mx-3">
-    <small>
-      I am an entrepreneur who founded and served as a CEO of three companies in the last fives years.
-      I am passionate about creating new products or services, business models, understanding and delivering
-      a value to consumers or business.
-    </small>
-  </div>
-  <hr>
+      <legend>-PROFILE-</legend>
+      <div class="mx-3">
+        <small> <%= user.mission %>  </small>
+      </div>
+      <hr>
 
-  <legend>-CONTACT-</legend>
-  <ul class="contact-information mx-3">
-    <small><li> Address: Peat Hashulchan 5 Tel Aviv Jaffa</li></small>
-    <small><li> Phone Number: 052-441-3673 </li></small>
-    <small><li> Email: meirosilio@gmail.com</li></small>
-  </ul>
-  <hr>
+      <legend>-CONTACT-</legend>
+      <ul class="contact-information mx-3">
+        <small><li> <i class="fa fa-map-marker" aria-hidden="true"></i> <%= user.home_address %></li></small>
+        <small><li><i class="fa fa-mobile" aria-hidden="true"></i> <%= user.phone_number %></li></small>
+        <small><li><i class="fa fa-envelope-o" aria-hidden="true"></i> <%= user.email_address %></li></small>
+      </ul>
+      <hr>
 
-  <legend>-Skills-</legend>
+      <legend>-Skills-</legend>
 
-  <div class="progress mx-3 my-3">
-    <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-      <p class="mt-auto"><i>Team Managment</i></p>
-    </div>
-  </div>
+      <% @skilles.each do |skill| %>
+          <div class="progress mx-3 my-3">
+            <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: <%=(skill.level)*10%>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+              <p class="mt-auto"><i> <%= skill.name %> </i></p>
+            </div>
+          </div>
+      <% end %>
 
-  <div class="progress mx-3 my-3">
-    <div class="progress-bar bg-success" role="progressbar" style="width: 85%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-      <p class="mt-auto"><i>Financial Projection</i></p>
-    </div>
-  </div>
-
-  <div class="progress mx-3 my-3">
-    <div class="progress-bar bg-success" role="progressbar" style="width: 85%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-      <p class="mt-auto"><i>Business Devlopment</i></p>
-    </div>
-  </div>
-
-  <div class="progress mx-3 my-3">
-    <div class="progress-bar bg-success" role="progressbar" style="width: 80%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-      <p class="mt-auto"><i>Ruby On rails</i></p>
-    </div>
-  </div>
-
-  <div class="progress mx-3 my-3">
-    <div class="progress-bar bg-success" role="progressbar" style="width: 80%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-      <p class="mt-auto"><i>Photoshop</i></p>
-    </div>
-  </div>
-
-  <div class="progress mx-3 my-3">
-    <div class="progress-bar bg-success" role="progressbar" style="width: 70%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-      <p class="mt-auto"><i>Android</i></p>
-    </div>
-  </div>
-
-  <div class="progress mx-3 my-3">
-    <div class="progress-bar bg-success" role="progressbar" style="width: 70%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-      <p class="mt-auto"><i>Analytics Tool</i></p>
-    </div>
-  </div>
+  <% end %>
 </nav>
 
 
