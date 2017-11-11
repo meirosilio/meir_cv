@@ -59,10 +59,26 @@ a, a:hover, a:focus {
 }
 
 #sidebar .sidebar-header {
-  padding: 20px;
   background: #ffffff;
+  margin: 20px 10px 5px 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+#sidebar legend {
+  color:#FF9966 ;
+  text-align: center;
+  font-family: 'Sintony', sans-serif;
 }
 
+#sidebar small {
+  vertical-align: middle;
+  font-family: 'Sintony', sans-serif;
+}
+.contact-information{
+  padding-left: 0;
+}
+li{
+  list-style-type: none;
+}
 
 /* ---------------------------------------------------
     CONTENT STYLE
@@ -107,6 +123,16 @@ a, a:hover, a:focus {
   margin: 5px auto;
 }
 
+.img-circular {
+  margin: auto;
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  display: block;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+}
 
 /* ---------------------------------------------------
     MEDIAQUERIES
@@ -147,7 +173,7 @@ a, a:hover, a:focus {
   font-family: 'Montserrat', sans-serif;
 }
 .card-header{
-  background-color: rgba(12, 75, 138, 0.24);
+  background-color: rgba(176, 176, 176, 0.1);
 }
 div.card-title{
   font-family: 'Montserrat', sans-serif;
