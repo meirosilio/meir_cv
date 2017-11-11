@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'dashboard/index'
+
   get 'experiences/index'
 
   root 'static_pages#index'

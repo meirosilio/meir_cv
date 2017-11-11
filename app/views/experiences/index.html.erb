@@ -1,0 +1,40 @@
+
+<%= render 'shared/dashboard_header' %>
+
+<div id="wrapper">
+  <%= render 'shared/dashboard_sidebar_links' %>
+
+  <div id="page-content-wrapper">
+    <div class="page-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mt-5">
+            <legend>Manage Your Experiences:</legend>
+
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th scope="col">id</th>
+                <th scope="col">Experince Name</th>
+                <th scope="col">Action</th>
+              </tr>
+              </thead>
+
+              <% @experiences.each do |experience| %>
+                  <tbody>
+                  <tr>
+                    <th scope="row"><%= experience.id %></th>
+                    <td><%= experience.name %></td>
+                    <td>
+                      <p>Edit Delete</p>
+                    </td>
+                  </tr>
+                  </tbody>
+              <%end %>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
