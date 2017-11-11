@@ -1,9 +1,13 @@
 @import "bootstrap";
 
-legend h1 h4 h5{
-  font-family: 'Montserrat', sans-serif;
-}
 p{
+  font-family: 'Sintony', sans-serif;
+}
+
+.nav-page{
+  margin:2px;
+  padding: 5px;
+  color:#FF9966;
   font-family: 'Sintony', sans-serif;
 }
 
@@ -16,10 +20,9 @@ a, a:hover, a:focus {
   text-decoration: none;
   transition: all 0.3s;
 }
-
-.navbar {
+.navbar.navbar-expand-lg.navbar-light.bg-light {
   padding: 15px 10px;
-  background: #fff;
+  background: #fff !important;
   border: none;
   border-radius: 0;
   margin-bottom: 40px;
@@ -67,6 +70,7 @@ a, a:hover, a:focus {
 #content {
   padding: 20px;
   min-height: 100vh;
+  width: 100%;
   transition: all 0.3s;
 }
 
@@ -138,6 +142,15 @@ a, a:hover, a:focus {
 
 }
 
-
-
+//stylling card
+#position-title{
+  font-family: 'Montserrat', sans-serif;
+}
+.card-header{
+  background-color: rgba(12, 75, 138, 0.24);
+}
+div.card-title{
+  font-family: 'Montserrat', sans-serif;
+  color:#FF9966 ;
+}
 
