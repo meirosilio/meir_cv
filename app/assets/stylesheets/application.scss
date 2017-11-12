@@ -192,9 +192,9 @@ div.card-title{
 }
 
 #sidebar-wrapper {
-  margin-left: -250px;
-  left: 250px;
-  width: 250px;
+  margin-left: -220px;
+  left: 220px;
+  width: 220px;
   background: rgb(255, 255, 255);
   position: fixed;
   height: 100%;
@@ -212,37 +212,38 @@ div.card-title{
 .sidebar-nav {
   position: absolute;
   top: 0;
-  width: 250px;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-@media (max-width:767px) {
-
-  #wrapper {
-    padding-left: 0;
-  }
-
-  #sidebar-wrapper {
-    left: 0;
-  }
-
-  #wrapper.active {
-    position: relative;
-    left: 250px;
-  }
-
-  #wrapper.active #sidebar-wrapper {
-    left: 250px;
-    width: 250px;
-    transition: all 0.4s ease 0s;
-  }
-}
-
-.Dashboard-sidebar-links{
+.Dashboard-sidebar{
+  font-size: 80%;
   padding: 20px;
   margin-left: 20%;
   font-family: 'Sintony', sans-serif;
   color:#FF9966 ;
+}
+
+//stylling modal
+input.btn.btn-primary{
+  margin-left: 30%;
+  color:#212529;
+  border-color: #FF9966;
+  background-color: transparent;
+}
+input.btn.btn-primary:hover{
+  color:#fff;
+  border-color: #FF9966;
+  background-color: #FF9966;
+}
+#new-experience{
+  color:#212529;
+  border-color: #FF9966;
+  background-color: transparent;
+}
+#new-experience:hover{
+  color:#fff;
+  border-color: #FF9966;
+  background-color: #FF9966;
 }

@@ -1,40 +1,31 @@
 
-<%= render 'shared/dashboard_header' %>
-
-<div id="wrapper">
-  <%= render 'shared/dashboard_sidebar_links' %>
-
-  <div id="page-content-wrapper">
-    <div class="page-content">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 mt-5">
-            <legend>Manage Your Experiences:</legend>
-
-            <table class="table table-striped">
-              <thead>
-              <tr>
-                <th scope="col">id</th>
-                <th scope="col">Experince Name</th>
-                <th scope="col">Action</th>
-              </tr>
-              </thead>
-
-              <% @experiences.each do |experience| %>
-                  <tbody>
-                  <tr>
-                    <th scope="row"><%= experience.id %></th>
-                    <td><%= experience.name %></td>
-                    <td>
-                      <p>Edit Delete</p>
-                    </td>
-                  </tr>
-                  </tbody>
-              <%end %>
-            </table>
-          </div>
-        </div>
+<%= render :layout => '/shared/dashboard_main.html.erb' do %>
+    <div class="row">
+      <div class="col-md-10">
+        <legend>Manage Your Experiences:</legend>
+      </div>
+      <div class="col-md-2 mx-auto">
+        <%= link_to "New Experience", new_experience_path, remote: true, class: "btn btn-primary", id:"new-experience" %>
       </div>
     </div>
-  </div>
-</div>
+
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Experince Name</th>
+        <th scope="col">Action</th>
+      </tr>
+      </thead>
+
+
+      <tbody id="experiences">
+      <%= render @experiences %>
+      </tbody>
+    </table>
+
+    <%= render 'dialog' %>
+<% end %>
+
+
+

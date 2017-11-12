@@ -21,7 +21,5 @@ $(document).ready(function () {
         $('#sidebar').toggleClass('active');
         $(this).toggleClass('active');
     });
-
-
-
 });
+
