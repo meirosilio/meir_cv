@@ -35,6 +35,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 4.7.0'
+gem 'devise'
+gem 'delayed_job_active_record'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
