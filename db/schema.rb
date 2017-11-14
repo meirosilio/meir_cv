@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171113205301) do
+ActiveRecord::Schema.define(version: 20171113223553) do
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer "priority", default: 0, null: false
@@ -39,11 +39,11 @@ ActiveRecord::Schema.define(version: 20171113205301) do
     t.string "start_date"
     t.string "end_date"
     t.text "description"
-    t.integer "Experience_id"
+    t.integer "experience_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.index ["Experience_id"], name: "index_jobs_on_Experience_id"
+    t.index ["experience_id"], name: "index_jobs_on_experience_id"
     t.index ["user_id"], name: "index_jobs_on_user_id"
   end
 

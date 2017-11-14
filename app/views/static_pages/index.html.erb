@@ -22,14 +22,15 @@
 
 
 <div class="row">
-  <% 100.times do %>
-        <div class="card mx-auto my-2" style="width: 20rem;">
-          <img class="card-img-top" src="/assets/profile_image" alt="Card image cap">
-          <div class="card-block">
-            <h4 class="card-title mx-2 mt-2">Meir Rosilio CV</h4>
-            <p class="card-text mx-2">I am an entrepreneur who founded and served as a CEO of two companies in the last three years.
-              I am passionate about creating new products or services, business models, understanding and delivering a value to
-              consumers or business.</p>
+  <% @users.each do |user| %>
+        <div class="col-md-3">
+          <div class="card mr-3 ml-4 my-2" style="width: 20rem;">
+            <%= link_to image_tag("/assets/profile_image",class: "card-img-top"), user_path(user) %>
+            <div class="card-block" id="index-user-card-block">
+
+              <h4 class="card-title mx-2 mt-2"> <%= user.first_name %><%= user.last_name %> CV</h4>
+              <p class="card-text mx-2"><%= user.mission%></p>
+            </div>
           </div>
         </div>
   <% end %>

@@ -3,6 +3,8 @@ class User < ApplicationRecord
   #  :timeoutable and :omniauthable
 
   has_many :jobs
+  has_many :skills
+  has_many :experiences, through: :jobs
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :lockable
