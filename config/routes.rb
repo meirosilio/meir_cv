@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   root 'static_pages#index'
   devise_for :users
   resources :users, only: [:show]
-  resources :experiences, except: :show
-  resources :jobs, as: :cv
+  resources :experience_categories, except: :show
+  resources :experiences
   get '*path' => redirect('/')
 
 end

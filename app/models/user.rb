@@ -2,9 +2,9 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   #  :timeoutable and :omniauthable
 
-  has_many :jobs
+  has_many :experiences
   has_many :skills
-  has_many :experiences, through: :jobs
+  has_many :experience_categories, through: :experiences
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :lockable

@@ -5,7 +5,7 @@
         <legend>Manage Your Experiences:</legend>
       </div>
       <div class="col-md-2 mx-auto">
-        <%= link_to "New Experience", new_experience_path, remote: true, class: "btn btn-primary", id:"new-experience" %>
+
       </div>
     </div>
 
@@ -13,18 +13,39 @@
       <thead>
       <tr>
         <th scope="col">id</th>
-        <th scope="col">Experince Name</th>
+        <th scope="col">Name</th>
+        <th scope="col">Position</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">End Date</th>
+        <th scope="col">Description</th>
         <th scope="col">Action</th>
       </tr>
       </thead>
 
 
       <tbody id="experiences">
-      <%= render @experiences %>
+          <% @user_experiences.each do |experience| %>
+          <tr>
+            <th scope="row"><%= experience.id %></th>
+            <th><%= experience.name %></th>
+            <th><%= experience.position %></th>
+            <th><%= experience.start_date %></th>
+            <th><%= experience.end_date %></th>
+            <th><%= experience.description %></th>
+
+            <td>
+              <p>
+                <%= link_to " ", edit_experience_path(experience), class:"fa fa-pencil-square-o" %> |
+                <%= link_to '', experience,:method => :delete, data: {confirm: "Delete: #{experience.name}"}, class: 'fa fa-trash-o' %>
+              </p>
+            </td>
+
+          </tr>
+          <% end %>
       </tbody>
     </table>
 
-    <%= render 'dialog' %>
+
 <% end %>
 
 

@@ -1,0 +1,55 @@
+
+<div id="content">
+  <%= render 'shared/header' %>
+
+
+  <% @user.experience_categories.each_with_index do |experience_category,eindex| %>
+
+      <% if eindex==0 || experience_category.id !=  @user.experience_categories[eindex-1].id %>
+
+          <div class="row mt-5">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+              <div id="accordion" role="tablist">
+                <div class="card">
+                  <div class="card-title">
+                    <legend class="mx-2 mt-2">- <%= experience_category.name %> -</legend>
+                  </div>
+                  <% if !@user.experiences.nil? %>
+                      <% @user.experiences.each_with_index do |experience,jindex|%>
+
+                          <% if experience_category.name === experience.experience_category.name %>
+                              <div class="card-header" role="tab" id="headingOne">
+                                <a data-toggle="collapse" href="#collapse<%=eindex.to_s%><%=jindex.to_s%>" aria-expanded="true" aria-controls="collapseOne">
+                                  <div class="row" id="position-title">
+
+
+                                    <h5 class="col-md-8"><%= experience.name%> | <%=experience.position %></h5>
+                                    <h5 class="ml-auto mr-1"><%= experience.start_date %> - <%= experience.end_date %></h5>
+                                  </div>
+                                </a>
+                              </div>
+                              <div id="collapse<%=eindex.to_s%><%=jindex.to_s%>" class="collapse hide" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+                                <div class="card-body">
+                                  <p><%= experience.description %></p>
+                                </div>
+                              </div>
+                          <% end %>
+
+                      <% end %>
+                  <% end %>
+
+
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+      <% end %>
+  <% end %>
+
+
+</div>
+
+

@@ -1,0 +1,64 @@
+
+<%= render :layout => '/shared/dashboard_main.html.erb' do %>
+
+    <div class="row">
+      <div class="col-md-10">
+        <legend>Edit "<%= @experience.name %>"</legend>
+      </div>
+      <div class="col-md-2 mx-auto">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <%= form_for(@experience) do |f| %>
+
+            <div class="form-group">
+              <%= f.label :name, "Experience Name" %>
+              <%= f.text_field :name, class:"form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :position %>
+              <%= f.text_field :position, class:"form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :start_date %>
+              <%= f.text_field :start_date, class:"form-control" %>
+            </div>
+
+
+            <div class="form-group">
+              <%= f.label :end_date %>
+              <%= f.text_field :end_date, class:"form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :description %>
+              <%= f.text_area :description, class:"form-control", rows:5 %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :experience_category_id, "Experience Category Name" %>
+              <%= f.collection_select(:experience_category_id, ExperienceCategory.all,
+                                      :id, :name, {}, class:"form-control")%>
+            </div>
+
+            <div class="form-group">
+              <%= f.submit "Update #{@experience.name} experience",
+                           class:"btn btn-primary btn-block", id:"sing-up-in-btn" %>
+            </div>
+
+
+
+        <% end %>
+      </div>
+    </div>
+
+
+
+<% end %>
+
+
+

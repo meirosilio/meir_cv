@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171113223553) do
+ActiveRecord::Schema.define(version: 20171114151752) do
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer "priority", default: 0, null: false
@@ -27,24 +27,24 @@ ActiveRecord::Schema.define(version: 20171113223553) do
     t.index ["priority", "run_at"], name: "delayed_jobs_priority"
   end
 
-  create_table "experiences", force: :cascade do |t|
+  create_table "experience_categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "jobs", force: :cascade do |t|
+  create_table "experiences", force: :cascade do |t|
     t.string "name"
     t.string "position"
     t.string "start_date"
     t.string "end_date"
     t.text "description"
-    t.integer "experience_id"
+    t.integer "experience_category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.index ["experience_id"], name: "index_jobs_on_experience_id"
-    t.index ["user_id"], name: "index_jobs_on_user_id"
+    t.index ["experience_category_id"], name: "index_experiences_on_experience_category_id"
+    t.index ["user_id"], name: "index_experiences_on_user_id"
   end
 
   create_table "skills", force: :cascade do |t|

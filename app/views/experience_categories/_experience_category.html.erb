@@ -1,0 +1,11 @@
+<tr id="experience_<%=experience_category.id%>">
+  <th scope="row"><%= experience_category.id %></th>
+  <td><%= experience_category.name %></td>
+  <td>
+    <p>
+      <%= link_to " Edit", edit_experience_category_path(experience_category), remote:true, class:"fa fa-pencil-square-o" %> |
+      <%= link_to ' Delete', experience_category,:method => :delete, data: {confirm: "Delete: #{experience_category.name}"}, class: 'fa fa-trash-o' %>
+    </p>
+  </td>
+</tr>
+
